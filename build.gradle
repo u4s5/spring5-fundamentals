@@ -6,9 +6,28 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
+    maven { url 'http://repo.spring.io/libs-milestone' }
+    maven { url 'http://repo.spring.io/libs-release' }
+
     mavenCentral()
 }
 
+configurations {
+    testCompile.extendsFrom compileOnly
+}
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework:spring-context:+',
+
+            // ORM
+            'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:+'
+
+    compileOnly 'org.projectlombok:lombok:+'
+
+    testCompile 'org.junit.jupiter:junit-jupiter-api:+',
+            'org.hamcrest:java-hamcrest:+'
+}
+
+task Wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
 }
