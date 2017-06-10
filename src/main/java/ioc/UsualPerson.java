@@ -1,4 +1,4 @@
-package lab.model;
+package ioc;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

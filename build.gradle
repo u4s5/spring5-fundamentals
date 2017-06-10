@@ -20,7 +20,12 @@ dependencies {
     compile 'org.springframework:spring-context:+',
 
             // ORM
-            'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:+'
+            'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:+',
+
+            // AOP
+            'org.aspectj:aspectjrt:+',
+            'aopalliance:aopalliance:+',
+            'org.aspectj:aspectjweaver:+'
 
     compileOnly 'org.projectlombok:lombok:+'
 

@@ -1,5 +1,5 @@
-import lab.model.Country;
-import lab.model.UsualPerson;
+package ioc;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
