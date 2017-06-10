@@ -1,5 +1,7 @@
 package ioc;
 
+import model.simple.SimpleCountry;
+import model.simple.SimplePerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -7,19 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration("classpath:application-context.xml")
+@ContextConfiguration("classpath:ioc.xml")
 class SpringTCFAppTest {
 
     @Autowired
-    private UsualPerson person;
+    private SimplePerson person;
 
-    private UsualPerson expectedPerson;
+    private SimplePerson expectedPerson;
 
 
     @BeforeEach
@@ -32,24 +33,15 @@ class SpringTCFAppTest {
         assertEquals(expectedPerson, person);
     }
 
-    private UsualPerson getExpectedPerson() {
-        UsualPerson person = new UsualPerson()
-                .setHeight(1.78F)
-                .setAge(35)
-                .setProgrammer(true)
-                .setName("John Smith")
-                .setCountry(
-                        new Country()
-                                .setName("Russia")
-                                .setCodeName("RU"));
-
-        List<String> contacts = new ArrayList<>();
-        contacts.add("asd@asd.ru");
-        contacts.add("+7-234-456-67-89");
-
-        person.setContacts(contacts);
-
-        return person;
+    private SimplePerson getExpectedPerson() {
+        return new SimplePerson(
+                0,
+                "John Smith",
+                new SimpleCountry(1, "Russia", "RU"),
+                35,
+                1.78F,
+                true,
+                Arrays.asList("asd@asd.ru", "+7-234-456-67-89"));
     }
 
 }

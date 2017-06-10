@@ -25,7 +25,11 @@ dependencies {
             // AOP
             'org.aspectj:aspectjrt:+',
             'aopalliance:aopalliance:+',
-            'org.aspectj:aspectjweaver:+'
+            'org.aspectj:aspectjweaver:+',
+
+            // JDBC
+            'com.h2database:h2:+',
+            'org.springframework:spring-jdbc:+'
 
     compileOnly 'org.projectlombok:lombok:+'
 

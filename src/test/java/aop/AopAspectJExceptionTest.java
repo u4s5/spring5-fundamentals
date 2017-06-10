@@ -3,6 +3,7 @@ package aop;
 import aop.model.Bar;
 import aop.model.Customer;
 import aop.model.CustomerBrokenException;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,7 +26,7 @@ class AopAspectJExceptionTest {
     private Customer customer;
 
     @BeforeEach
-    void setUp() throws Exception {
+    void setUp() {
         customer.setBroke(true);
     }
 
@@ -36,5 +37,10 @@ class AopAspectJExceptionTest {
 
         assertTrue("Customer is not broken ", AopLog.getStringValue().contains("Hmmm..."));
         System.out.println(AopLog.getStringValue());
+    }
+
+    @AfterEach
+    void setDown() {
+        customer.setBroke(false);
     }
 }
