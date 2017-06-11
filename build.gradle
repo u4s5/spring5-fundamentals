@@ -21,6 +21,10 @@ dependencies {
 
             // ORM
             'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:+',
+            'org.hibernate:hibernate-entitymanager:4.0.1.Final',
+            'org.hibernate:hibernate-core:4.0.1.Final',
+            'org.springframework:spring-orm:+',
+            'javax.transaction:jta:+',
 
             // AOP
             'org.aspectj:aspectjrt:+',
@@ -29,7 +33,7 @@ dependencies {
 
             // JDBC
             'com.h2database:h2:+',
-            'org.springframework:spring-jdbc:+'
+            'org.springframework:spring-dao.jdbc:+'
 
     compileOnly 'org.projectlombok:lombok:+'
 

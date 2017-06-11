@@ -1,16 +1,34 @@
 package model.simple;
 
 import lombok.AllArgsConstructor;
-import lombok.Value;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Value
+import javax.persistence.*;
+
+@Data
+@EqualsAndHashCode(exclude = "id")
+@NoArgsConstructor
 @AllArgsConstructor(onConstructor = @__(@Autowired))
+@Entity
+@Table(name = "country")
 public class SimpleCountry implements model.Country {
 
-    private static final long serialVersionUID = 1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column
     private String name;
+
+    @Column//(name = "code_name")
     private String codeName;
+
+    public SimpleCountry(String name, String codeName) {
+        this.name = name;
+        this.codeName = codeName;
+    }
+
 }

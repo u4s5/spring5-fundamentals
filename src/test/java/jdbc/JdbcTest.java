@@ -1,5 +1,7 @@
 package jdbc;
 
+import dao.jdbc.CountryDao;
+import dao.jdbc.SimpleCountryDao;
 import model.Country;
 import model.simple.SimpleCountry;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration("classpath:application-context.xml")
+@ContextConfiguration("classpath:jdbc.xml")
 class JdbcTest {
 
     @Autowired

@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SimpleAppTest {
 
-    private static final String APPLICATION_CONTEXT_XML_FILE_NAME = "classpath:ioc.xml";
+    private static final String APPLICATION_CONTEXT_XML_FILE_NAME = "classpath:application-context.xml";
 
     private AbstractApplicationContext context;
 

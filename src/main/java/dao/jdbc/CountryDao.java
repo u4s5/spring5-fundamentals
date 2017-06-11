@@ -1,4 +1,4 @@
-package jdbc;
+package dao.jdbc;
 
 import model.Country;
 import model.simple.SimpleCountry;

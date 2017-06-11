@@ -6,4 +6,10 @@ public interface Country {
     String getName();
 
     String getCodeName();
+
+    void setId(int id);
+
+    void setName(String name);
+
+    void setCodeName(String codeName);
 }
